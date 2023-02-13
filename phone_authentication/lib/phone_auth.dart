@@ -19,7 +19,7 @@ class PhoneAuth extends StatelessWidget {
               (PhoneAuthCredential phoneAuthCredential) async {
             var result =
                 await firebaseAuth.signInWithCredential(phoneAuthCredential);
-            user = result.user;
+            user = result;
             print("User$user");
             if (user != null) {
               Navigator.push(
