@@ -17,18 +17,18 @@ class PhoneAuth extends StatelessWidget {
           timeout: const Duration(seconds: 60),
           verificationCompleted:
               (PhoneAuthCredential phoneAuthCredential) async {
-            // var result =
-            //     await firebaseAuth.signInWithCredential(phoneAuthCredential);
-            // user = result.user;
-            // print("User$user");
-            // if (user != null) {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: ((context) => const HomePage()),
-            //     ),
-            //   );
-            // }
+            var result =
+                await firebaseAuth.signInWithCredential(phoneAuthCredential);
+            user = result.user;
+            print("User$user");
+            if (user != null) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => const HomePage()),
+                ),
+              );
+            }
           },
           verificationFailed: ((error) {
             print(error);
